@@ -46,6 +46,7 @@
         public function deleteData(){
             $code = $this->input->post('code');
             $this->pm->deleteProductByCode($code);
+            echo "delete success!";
         }
     }
 ?>
