@@ -26,5 +26,9 @@
             $sql = "DELETE FROM products WHERE code = '$code'";
             $this->db->query($sql);
         }
+        public function addProduct($list){
+            $result = $this->db->insert('products',$list);
+            return $result;
+        }
     }
 ?>

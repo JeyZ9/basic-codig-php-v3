@@ -27,5 +27,25 @@
             $this->pm->deleteProductByCode($code);
             $this->getProducts();
         }
+        public function htmlHelper(){
+            $this->load->view('show_html');
+        }
+        public function showform(){
+            $this->load->view('show_form');
+        }
+        public function create(){
+            $dataList = array(
+                'code' => $this->input->post('code'),
+                'name' => $this->input->post('name'),
+                'price' => $this->input->post('price')
+            );
+            $this->pm->addProduct($dataList);
+            echo "insert Data";
+        }
+
+        public function deleteData(){
+            $code = $this->input->post('code');
+            $this->pm->deleteProductByCode($code);
+        }
     }
 ?>
